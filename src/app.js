@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import HighLight from './HighLight';
 import 'github-markdown-css';
 import './app.less';
 
@@ -190,7 +191,7 @@ export default class App extends React.Component {
           </div>
         </div>
         <div>
-          <div className='markdown-raw'>{this.state.markdownRaw}</div>
+          <HighLight lang='markdown' className='markdown-raw'>{this.state.markdownRaw}</HighLight>
           <ReactMarkdown className='markdown-body' source={this.state.markdownRaw} />
         </div>
       </div>

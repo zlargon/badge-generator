@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import HighLight from './HighLight';
+import HighLight from 'react-syntax-highlight';
+import 'highlight.js/styles/github.css';  // Theme Github
 import 'github-markdown-css';
 import './app.less';
 
@@ -191,8 +192,15 @@ export default class App extends React.Component {
           </div>
         </div>
         <div>
-          <HighLight lang='markdown' className='markdown-raw'>{this.state.markdownRaw}</HighLight>
-          <ReactMarkdown className='markdown-body' source={this.state.markdownRaw} />
+          <HighLight
+            className='markdown-raw'
+            lang='markdown'
+            value={this.state.markdownRaw}
+          />
+          <ReactMarkdown
+            className='markdown-body'
+            source={this.state.markdownRaw}
+          />
         </div>
       </div>
     );
